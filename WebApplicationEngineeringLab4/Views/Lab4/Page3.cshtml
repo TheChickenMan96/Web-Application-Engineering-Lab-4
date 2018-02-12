@@ -1,0 +1,14 @@
+﻿@model string[]
+@{
+    ViewData["Title"] = "Page3";
+}
+<div class="container">
+    <h1>@ViewData["Message"]</h1>
+
+    <ol>
+        @for (int i = 0; i < Model.Length; i++)
+        {
+            <li>@Model[i]</li>
+        }
+    </ol>
+</div>

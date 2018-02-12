@@ -12,7 +12,7 @@ namespace WebApplicationEngineeringLab4.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return Redirect("Lab4");
         }
 
         public IActionResult About()

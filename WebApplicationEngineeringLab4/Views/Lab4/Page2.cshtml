@@ -1,0 +1,29 @@
+﻿@model int
+@{
+    ViewData["Title"] = "Page2";
+}
+<div class="container">
+    <h1>Page 2 - Random Data</h1>
+    <h4>Select the number of profiles you want to display:</h4>
+    @for (int i = 1; i <= 5; i++)
+    {
+        <a href="/Lab4/Page2/@i" class="btn btn-info">@i</a>
+    }
+
+    @for (int i = 1; i <= Model; i++)
+    {
+        <div class="profile-box">
+            <h2 class="profile-box-header">Profile @i</h2>
+            <div class="profile-text">
+                <div><strong>Name: </strong>@LoremNET.Lorem.Words(1) @LoremNET.Lorem.Words(1)</div>
+                <div><strong>Email: </strong>@LoremNET.Lorem.Email()</div>
+                <div><strong>Bio: </strong>@LoremNET.Lorem.Paragraph(5, 8, 8, 12)</div>
+            </div>
+
+        </div>
+
+    }
+    <div class="button-box">
+        <a href="/Lab4/Page3" class="btn btn-danger btn-lg">Go to Page 3</a>
+    </div>
+</div>

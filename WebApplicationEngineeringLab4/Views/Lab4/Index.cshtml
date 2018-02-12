@@ -1,0 +1,31 @@
+﻿@model  System.DateTime
+@{
+    ViewData["Title"] = "Lab 4 Home Page";
+
+    DateTime morning = new DateTime(Model.Year, Model.Month, Model.Day, 12, 0, 0);
+    DateTime evening = new DateTime(Model.Year, Model.Month, Model.Day, 18, 0, 0);
+    DateTime reset = new DateTime(Model.Year, Model.Month, Model.Day, 4, 0, 0);
+    string greeting = "";
+    if(Model.CompareTo(morning) < 0)
+    {
+        greeting = "Good Morning!";
+    } else if(Model.CompareTo(morning) > 0 && Model.CompareTo(evening) < 0)
+    {
+        greeting = "Good Afternoon!";
+    } else
+    {
+        greeting = "Good Evening!";
+    }
+
+    string message1 = $"The current time is {Model.ToString("h:mm tt")} on {Model.ToString("D")}";
+
+    DateTime nextYear = new DateTime(Model.Year + 1, 1, 1);
+    string message2 = $"There are {nextYear.Subtract(Model).Days} more days in {Model.Year}";
+}
+<div class="container">
+    <h1>@greeting</h1>
+    <h3>@message1</h3>
+    <h4>@message2</h4>
+    <a href="/Lab4/Page2" class="btn btn-info">Go to Page 2</a>
+</div>
+
